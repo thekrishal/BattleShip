@@ -1,0 +1,11 @@
+/Users/krishaladhikari/Desktop/Csharp/BattleShip/BattleShipLibrary/bin/Debug/net10.0/BattleShipLibrary.deps.json
+/Users/krishaladhikari/Desktop/Csharp/BattleShip/BattleShipLibrary/bin/Debug/net10.0/BattleShipLibrary.dll
+/Users/krishaladhikari/Desktop/Csharp/BattleShip/BattleShipLibrary/bin/Debug/net10.0/BattleShipLibrary.pdb
+/Users/krishaladhikari/Desktop/Csharp/BattleShip/BattleShipLibrary/obj/Debug/net10.0/BattleShipLibrary.GeneratedMSBuildEditorConfig.editorconfig
+/Users/krishaladhikari/Desktop/Csharp/BattleShip/BattleShipLibrary/obj/Debug/net10.0/BattleShipLibrary.AssemblyInfoInputs.cache
+/Users/krishaladhikari/Desktop/Csharp/BattleShip/BattleShipLibrary/obj/Debug/net10.0/BattleShipLibrary.AssemblyInfo.cs
+/Users/krishaladhikari/Desktop/Csharp/BattleShip/BattleShipLibrary/obj/Debug/net10.0/BattleShipLibrary.csproj.CoreCompileInputs.cache
+/Users/krishaladhikari/Desktop/Csharp/BattleShip/BattleShipLibrary/obj/Debug/net10.0/BattleShipLibrary.dll
+/Users/krishaladhikari/Desktop/Csharp/BattleShip/BattleShipLibrary/obj/Debug/net10.0/refint/BattleShipLibrary.dll
+/Users/krishaladhikari/Desktop/Csharp/BattleShip/BattleShipLibrary/obj/Debug/net10.0/BattleShipLibrary.pdb
+/Users/krishaladhikari/Desktop/Csharp/BattleShip/BattleShipLibrary/obj/Debug/net10.0/ref/BattleShipLibrary.dll
