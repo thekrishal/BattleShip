@@ -1,5 +1,4 @@
 ﻿namespace BattleShipLibrary;
-
 public class GridSpotModel
 {
  public string SpotLetter{get;set;}

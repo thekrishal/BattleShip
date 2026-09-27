@@ -1,4 +1,4 @@
-namespace BattleShipLibrary.Design
+namespace BattleShipLibrary.Models
 {
    public  class design
     {
@@ -9,5 +9,6 @@ namespace BattleShipLibrary.Design
            spaces=0;
            return new string(' ',spaces)+text; 
         }
+        
     }
 }
