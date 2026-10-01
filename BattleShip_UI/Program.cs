@@ -17,6 +17,17 @@ public class Program
         p2.UserName=GetData.PlayerName("PlayerB,Enter your name");
         p2.ShipLocations=GetData.ShipPlacement("Enter your 5 ship placements");
         Console.Clear();
+        bool gameOver=false;
+        while(!gameOver)
+        {
+            gameOver=GamePlay(p1,p2);
+            if (!gameOver)
+            gameOver=GamePlay(p2,p1);
+
+        }
+        Console.WriteLine("Press Enter to exit");
+        Console.ReadLine();
+
     }
     public static void WelcomeMessage()
     {
@@ -24,7 +35,37 @@ public class Program
         Console.WriteLine(design.CenterText("Welcome to BattleShip"));
         Console.WriteLine(design.CenterText("**************************************************************************"));
     }
-}
-
+    public static bool GamePlay(PlayerInfoModel attacker,PlayerInfoModel defender )
+    {
+        GridSpotModel shot=GetData.ShotPlacement($"{attacker.UserName},Enter your shot");
+        bool alreadyShot=attacker.ShotLocations.Any(x=> x.SpotLetter==shot.SpotLetter && x.SpotNumber==shot.SpotNumber );
+        if (alreadyShot)
+        {
+            Console.WriteLine("The location is already shot");
+            return false;
+        }
         
+        attacker.ShotLocations.Add(shot);
+        bool hit=defender.ShipLocations.Any(x =>x.SpotLetter==shot.SpotLetter && x.SpotNumber==shot.SpotNumber);
 
+        if(hit)
+        {
+        Console.WriteLine("Hit");
+        GridSpotModel shipToRemove=defender.ShipLocations.First(x =>x.SpotLetter==shot.SpotLetter&&x.SpotNumber==shot.SpotNumber);
+        defender.ShipLocations.Remove(shipToRemove);
+        }
+
+        else
+        {
+        Console.WriteLine("Miss");
+        }
+
+        if(defender.ShipLocations.Count==0)
+            {
+                Console.WriteLine($"{attacker.UserName},is the winner");
+                return true;
+            }
+            return false;
+    }
+}
+    
