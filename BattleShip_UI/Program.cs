@@ -14,8 +14,13 @@ public class Program
         PlayerInfoModel p2=new PlayerInfoModel();
         p1.UserName=GetData.PlayerName("PlayerA,Enter your name");
         p1.ShipLocations=GetData.ShipPlacement("Enter your 5 ship placements");
+        design.PrintGrid(p1);
+        Console.ReadLine();
+        Console.Clear();
         p2.UserName=GetData.PlayerName("PlayerB,Enter your name");
         p2.ShipLocations=GetData.ShipPlacement("Enter your 5 ship placements");
+        design.PrintGrid(p2);
+        Console.ReadLine();
         Console.Clear();
         bool gameOver=false;
         while(!gameOver)
@@ -62,7 +67,10 @@ public class Program
 
         if(defender.ShipLocations.Count==0)
             {
-                Console.WriteLine($"{attacker.UserName},is the winner");
+                Console.WriteLine(design.CenterText("**************************************************************************"));
+                Console.WriteLine(design.CenterText($"{attacker.UserName},is the winner"));
+                Console.WriteLine(design.CenterText("All enemy ships destroyed"));
+                Console.WriteLine(design.CenterText("**************************************************************************"));
                 return true;
             }
             return false;
