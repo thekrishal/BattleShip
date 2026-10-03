@@ -12,7 +12,7 @@ namespace BattleShipLibrary.Models
         }
         public static void PrintGrid(PlayerInfoModel player)
         {
-            Console.Write("  ");
+            Console.Write("   ");
             int col;
             for(col=1;col<6;col++)
             {
@@ -28,7 +28,9 @@ namespace BattleShipLibrary.Models
                     bool hasShip=player.ShipLocations.Any(x =>x.SpotLetter == row.ToString() &&x.SpotNumber == col);
                     if(hasShip)
                     {
+                    Console.ForegroundColor=ConsoleColor.Green;
                     Console.Write("S ");
+                    Console.ResetColor();
                     }
                     else{
                     Console.Write("~ ");

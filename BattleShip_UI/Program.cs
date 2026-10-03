@@ -36,9 +36,11 @@ public class Program
     }
     public static void WelcomeMessage()
     {
+        Console.ForegroundColor=ConsoleColor.Cyan;
         Console.WriteLine(design.CenterText("**************************************************************************"));
         Console.WriteLine(design.CenterText("Welcome to BattleShip"));
         Console.WriteLine(design.CenterText("**************************************************************************"));
+        Console.ResetColor();
     }
     public static bool GamePlay(PlayerInfoModel attacker,PlayerInfoModel defender )
     {
@@ -49,28 +51,34 @@ public class Program
             Console.WriteLine("The location is already shot");
             return false;
         }
-        
-        attacker.ShotLocations.Add(shot);
+        else{
+        attacker.ShotLocations.Add(shot);}
         bool hit=defender.ShipLocations.Any(x =>x.SpotLetter==shot.SpotLetter && x.SpotNumber==shot.SpotNumber);
 
         if(hit)
         {
+        Console.ForegroundColor=ConsoleColor.Green;
         Console.WriteLine("Hit");
-        GridSpotModel shipToRemove=defender.ShipLocations.First(x =>x.SpotLetter==shot.SpotLetter&&x.SpotNumber==shot.SpotNumber);
+        Console.ResetColor();
+        GridSpotModel shipToRemove=defender.ShipLocations.FirstOrDefault(x =>x.SpotLetter==shot.SpotLetter&&x.SpotNumber==shot.SpotNumber);
         defender.ShipLocations.Remove(shipToRemove);
         }
 
         else
         {
+        Console.ForegroundColor=ConsoleColor.Red;
         Console.WriteLine("Miss");
+        Console.ResetColor();
         }
 
         if(defender.ShipLocations.Count==0)
             {
+                Console.ForegroundColor=ConsoleColor.DarkMagenta;
                 Console.WriteLine(design.CenterText("**************************************************************************"));
-                Console.WriteLine(design.CenterText($"{attacker.UserName},is the winner"));
-                Console.WriteLine(design.CenterText("All enemy ships destroyed"));
+                Console.WriteLine(design.CenterText($"{attacker.UserName.ToUpper()},is the winner"));
+                Console.WriteLine(design.CenterText("All enemy ships are destroyed"));
                 Console.WriteLine(design.CenterText("**************************************************************************"));
+                Console.ResetColor();
                 return true;
             }
             return false;

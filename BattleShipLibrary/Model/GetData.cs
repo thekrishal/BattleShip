@@ -6,7 +6,7 @@ namespace BattleShipLibrary.Models
         {
             Console.WriteLine(text);
             string name=Console.ReadLine();
-            return name;
+            return name.ToUpper();
         }
         public static List<GridSpotModel>  ShipPlacement(string text)
         {
@@ -28,12 +28,12 @@ namespace BattleShipLibrary.Models
                 ship.SpotLetter=shipPosition.Substring(0,1);
                 ship.SpotNumber=int.Parse(shipPosition.Substring(1));
                 }
-                if("ABCDE".Contains(ship.SpotLetter)&& ship.SpotNumber>0 && ship.SpotNumber<6)
+                if(isLastDigitANumber && "ABCDE".Contains(ship.SpotLetter)&& ship.SpotNumber>0 && ship.SpotNumber<6)
                 {
                     bool alreadyExists=ships.Any(x =>x.SpotLetter == ship.SpotLetter && x.SpotNumber == ship.SpotNumber);
                     if (alreadyExists)
                     {
-                        Console.WriteLine("You already places a ship there");
+                        Console.WriteLine("You already placed a ship there");
                     }
                     else
                     {
